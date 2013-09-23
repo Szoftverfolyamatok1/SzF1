@@ -13,9 +13,9 @@ public class DBConnect {
         try{
          Class.forName("com.mysql.jdbc.Driver");   //dynamically loads the class, in runtime
             //you have to add the Java connection class to the external libraries
-            //Download the zip here: http://dev.mysql.com/downloads/connector/j/#downloads
-            //In Intellij IDEA, click on the "Project" window, on the left, and press F4
-            //In the Libaray Settings window, click on the "+" on the right, and then browse your
+            //Download the zip from here: http://dev.mysql.com/downloads/connector/j/#downloads
+            // In Intellij IDEA,click on the "Project" window, on the left, and press F4
+            //In the Library Settings window, click on the "+" on the right, and then browse your
             //downloaded and unziped javac jar, and add it to the project
 
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dev_monopoly","root","root");
