@@ -6,7 +6,7 @@ The goal is a Java based Monopoly-board game.
 
 Project contributors:
   - Bereczki Tamara Gréta
-  - Veress Vivienn
+  - Veress Vivien
   - Takács Dániel András
   - Siklósi Benjamin
   
