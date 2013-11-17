@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<board>
+    <element id="GO">
+        <topLeftX>600</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>687</bottomRightX>
+        <bottomRightY>687</bottomRightY>
+    </element>
+    <element id="Mediterranean Avenue">
+        <topLeftX>544</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>599</bottomRightX>
+        <bottomRightY>617</bottomRightY>
+    </element>
+    <element id="Community Chest_1">
+        <topLeftX>489</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>543</bottomRightX>
+        <bottomRightY>687</bottomRightY>
+    </element>
+    <element id="Baltic Avenue">
+        <topLeftX>434</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>488</bottomRightX>
+        <bottomRightY>617</bottomRightY>
+    </element>
+    <element id="Income Tax">
+        <topLeftX>397</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>433</bottomRightX>
+        <bottomRightY>687</bottomRightY>
+    </element>
+    <element id="Reading Railroad">
+        <topLeftX>324</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>378</bottomRightX>
+        <bottomRightY>687</bottomRightY>
+    </element>
+    <element id="Oriental Avenue">
+        <topLeftX>268</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>322</bottomRightX>
+        <bottomRightY>617</bottomRightY>
+    </element>
+    <element id="Chance_1">
+        <topLeftX>213</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>267</bottomRightX>
+        <bottomRightY>687</bottomRightY>
+    </element>
+    <element id="Vermont Avenue">
+        <topLeftX>158</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>212</bottomRightX>
+        <bottomRightY>617</bottomRightY>
+    </element>
+    <element id="Connecticut Avenue">
+        <topLeftX>103</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>156</bottomRightX>
+        <bottomRightY>617</bottomRightY>
+    </element>
+    <element id="Jail">
+        <topLeftX>13</topLeftX>
+        <topLeftY>600</topLeftY>
+        <bottomRightX>102</bottomRightX>
+        <bottomRightY>687</bottomRightY>
+    </element>
+</board>
