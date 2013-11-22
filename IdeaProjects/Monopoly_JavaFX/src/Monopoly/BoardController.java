@@ -30,11 +30,13 @@ public class BoardController {
 	public Stage stage;
 	private Label diceLabel;
 	private Label doubledDiceThrowLabel;
+	private Bank bank;
 
 	private ArrayList<Player> playerList;
 	private int playerCounter;
 
 	public void initialize() {
+		bank = new Bank();
 		playerCounter = 0;
 		playerList = new ArrayList<Player>();
 
@@ -60,6 +62,8 @@ public class BoardController {
 
 	private void initializePlayers(int playerNumber)
 	{
+		CardController cc = new CardController();
+		cc.processCommunityCards();
 		//set current player's name
 		HumanPlayer humanPlayer = new HumanPlayer("HumanPlayer");
 		playerList.add(humanPlayer);

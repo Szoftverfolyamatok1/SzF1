@@ -16,22 +16,21 @@ public abstract class Player {
 	private int playerTurnsInJail;
 	private int currentThrowSum;
 
-//	private ArrayList<CardElement> playerCardList;
-	private ArrayList<BoardElement> playerPropertyList;
+	private ArrayList<Card> playerCardList;
+	private ArrayList<PropertyCard> playerPropertyList;
 
 	public abstract void step(); //I think it will need few parameters
 
 	//needs more outwork
 	//Needs to be public
-	public void initializePlayer()
-	{
+	public void initializePlayer() {
 		this.playerTurnsInJail = 0;
 		this.playerCash = 0;
 		this.playerLocation = new Point(0,0);
-		this.playerPropertyList = new ArrayList<BoardElement>();
+		this.playerPropertyList = new ArrayList<PropertyCard>();
+		this.playerCardList = new ArrayList<Card>();
 		this.isPlayerInJail = false;
 		this.canPlayerThrowOneMore = false;
-
 		this.doubleThrowCount = 0;
 		this.currentThrowResult = new Dices();
 		this.currentThrowSum = 0;
@@ -42,14 +41,12 @@ public abstract class Player {
 	}
 
 	//Needs to be public
-	public void setPlayerName(String playerName)
-	{
+	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}
 
 	//simply roll the dice, and check if it is double
-	public void rollTheDice()
-	{
+	public void rollTheDice() {
 		currentThrowSum = currentThrowResult.rollTheDice();
 		checkIfItWasDouble();
 		if (!getIsPlayerInJail())
@@ -62,8 +59,7 @@ public abstract class Player {
 		//if the player was in jail, and threw double in 3 turns, then able to come out
 		//else has to pay 50$s to the Bank
 		//if the player threw double, then able to throw one more, while has fewer double throws than 3
-		private void checkIfItWasDouble()
-		{
+		private void checkIfItWasDouble() {
 			if (currentThrowResult.isDoubled())
 			{
 				handleIfThrowWasDouble();
@@ -155,8 +151,7 @@ public abstract class Player {
 		return playerCash;
 	}
 
-	public int getCurrentThrowSum()
-	{
+	public int getCurrentThrowSum(){
 		return currentThrowSum;
 	}
 }

@@ -36,7 +36,7 @@ public class TestClass extends TestCase {
 	public void testParserWithWrongLocation(){
 		try{
 			XMLParser parser = new XMLParser();
-			parser.handleBoardXML("");
+			parser.handleBoardElementXML("");
 			assertTrue("Exception wasn't thrown", false);
 		} catch (NullPointerException npe) {
 			System.out.println(npe.getMessage());
@@ -46,7 +46,7 @@ public class TestClass extends TestCase {
 
 	public void testParserWithCorrectLocation(){
 		XMLParser parser = new XMLParser();
-		assertNotNull(parser.handleBoardXML("C:\\Users\\Benjamin\\IdeaProjects\\JavaFXCanvas\\XML\\BoardElements.xml"));
+		assertNotNull(parser.handleBoardElementXML("C:\\Users\\Benjamin\\IdeaProjects\\JavaFXCanvas\\XML\\BoardElements.xml"));
 	}
 
 }

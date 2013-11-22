@@ -15,7 +15,7 @@ public class BoardElement {
 
 	public BoardElement()
 	{
-		boardCoordinateList = new ArrayList<BoardElement>(new XMLParser().handleBoardXML("C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\BoardElements.xml"));
+		boardCoordinateList = new ArrayList<BoardElement>(new XMLParser().handleBoardElementXML("C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\BoardElements.xml"));
 	}
 
 	public BoardElement(Point topLeft, Point bottomRight, String elementName)
