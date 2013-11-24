@@ -36,10 +36,10 @@ public class BoardController {
 	private int playerCounter;
 
 	public void initialize() {
-		bank = new Bank();
 		playerCounter = 0;
 		playerList = new ArrayList<Player>();
 
+		initializeBank();
 		initializePlayers(4);
 		initializeVariables();
 
@@ -60,12 +60,16 @@ public class BoardController {
 		initializeDiceOnBoard();
 	}
 
+	private void initializeBank() {
+		bank = new Bank();
+		CardController cc = new CardController();
+		cc.processCommunityCards();
+		cc.processChanceCards();
+		cc.processPropertyCards();
+	}
+
 	private void initializePlayers(int playerNumber)
 	{
-		CardController cc = new CardController();
-//		cc.processCommunityCards();
-//		cc.processChanceCards();
-		cc.processPropertyCards();
 		//set current player's name
 		HumanPlayer humanPlayer = new HumanPlayer("HumanPlayer");
 		playerList.add(humanPlayer);

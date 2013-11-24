@@ -23,6 +23,7 @@ public class XMLParser{
 	{
 		boardElements = new ArrayList<BoardElement>();
 		getBoardElementCoordinates(xmlFileName);
+		System.out.println("Loaded BoardElement, Counter: " + boardElements.size());
 		return boardElements;
 	}
 
@@ -32,6 +33,7 @@ public class XMLParser{
 	{
 		cardElements = new ArrayList<Card>();
 		getCardData(xmlFileName, typeName);
+		System.out.println("Loaded " + typeName + ", Counter: " + cardElements.size());
 		return type.cast(cardElements);
 	}
 

@@ -14,7 +14,7 @@
     <file path="/Point.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1382463215832" ignored="false" />
     <file path="/BoardElement.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385235322818" ignored="false" />
     <file path="/BoardElement.xml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1382465075879" ignored="false" />
-    <file path="/XMLParser.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385292977344" ignored="false" />
+    <file path="/XMLParser.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385294838276" ignored="false" />
     <file path="/BoardElements.xml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1382469367618" ignored="false" />
     <file path="/card.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1382477023901" ignored="false" />
     <file path="$PROJECT_DIR$/../FXMLExample/src/sample/fxml_example.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1382474169415" ignored="false" />
@@ -30,7 +30,7 @@
     <file path="/TestClass.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1382819693929" ignored="false" />
     <file path="/Card.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385287947099" ignored="false" />
     <file path="/Bank.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1384174100948" ignored="false" />
-    <file path="/BoardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385292835195" ignored="false" />
+    <file path="/BoardController.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385294573152" ignored="false" />
     <file path="/GameWindow.fxml" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1384691210201" ignored="false" />
     <file path="/ChanceCard.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385200902935" ignored="false" />
     <file path="/CommunityChestCard.java" changelist="cdb932d9-7e58-4d94-93a9-e7b232ef17da" time="1385200886719" ignored="false" />
@@ -135,19 +135,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlotPropertyCard.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PlotPropertyCard.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Monopoly/PlotPropertyCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="28" selection-start="662" selection-end="662" vertical-scroll-proportion="0.15828678">
+            <state line="34" column="28" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLParser.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="XMLParser.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Monopoly/XMLParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="0" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
+            <state line="25" column="82" selection-start="747" selection-end="747" vertical-scroll-proportion="0.38549617">
               <folding />
             </state>
           </provider>
@@ -174,7 +174,7 @@
       <file leaf-file-name="BoardController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Monopoly/BoardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.0">
+            <state line="64" column="49" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -184,15 +184,6 @@
         <entry file="file://$PROJECT_DIR$/src/Monopoly/HumanPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="6" column="0" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilityPropertyCard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Monopoly/UtilityPropertyCard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -221,9 +212,9 @@
         <option value="$PROJECT_DIR$/XML/PropertyCards.xml" />
         <option value="$PROJECT_DIR$/src/Monopoly/UtilityPropertyCard.java" />
         <option value="$PROJECT_DIR$/src/Monopoly/PlotPropertyCard.java" />
+        <option value="$PROJECT_DIR$/src/Monopoly/BoardElement.java" />
         <option value="$PROJECT_DIR$/src/Monopoly/BoardController.java" />
         <option value="$PROJECT_DIR$/src/Monopoly/XMLParser.java" />
-        <option value="$PROJECT_DIR$/src/Monopoly/BoardElement.java" />
       </list>
     </option>
   </component>
@@ -708,7 +699,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -808,13 +799,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/XML/ChanceCards.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="23" selection-start="3353" selection-end="3353" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Monopoly/RailingPropertyCard.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="44" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0">
@@ -871,37 +855,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Monopoly/XMLParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="947" selection-end="947" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/XML/PropertyCards.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="228" column="22" selection-start="7985" selection-end="7998" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Monopoly/CardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="118" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Monopoly/BoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Monopoly/BoardElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="97" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -915,7 +871,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Monopoly/PlotPropertyCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="28" selection-start="662" selection-end="662" vertical-scroll-proportion="0.15828678">
+        <state line="34" column="28" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Monopoly/BoardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="49" selection-start="1666" selection-end="1666" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Monopoly/BoardElement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="97" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Monopoly/CardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="118" selection-start="1568" selection-end="1568" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="19" selection-start="1224" selection-end="1252" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Monopoly/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="82" selection-start="747" selection-end="747" vertical-scroll-proportion="0.38549617">
           <folding />
         </state>
       </provider>
