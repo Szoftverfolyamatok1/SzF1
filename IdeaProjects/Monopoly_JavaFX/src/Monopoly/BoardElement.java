@@ -13,7 +13,7 @@ public class BoardElement {
 
 	private ArrayList<BoardElement> boardCoordinateList;
 
-	final String boardXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\BoardElements.xml";
+	final String boardXMLPath = "XML/BoardElements.xml";
 
 	public BoardElement()
 	{

@@ -18,9 +18,9 @@ public class CardController {
 	private ArrayList<ChanceCard> chanceCards;
 	private XMLParser xmlParser;
 
-	final String communityXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\CommunityChestCards.xml";
-	final String chanceXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\ChanceCards.xml";
-	final String propertyXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\PropertyCards.xml";
+	final String communityXMLPath = "XML/CommunityChestCards.xml";
+	final String chanceXMLPath = "XML/ChanceCards.xml";
+	final String propertyXMLPath = "XML/PropertyCards.xml";
 
 	//Constructor
 	public CardController(){
