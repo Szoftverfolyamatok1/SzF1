@@ -63,7 +63,9 @@ public class BoardController {
 	private void initializePlayers(int playerNumber)
 	{
 		CardController cc = new CardController();
-		cc.processCommunityCards();
+//		cc.processCommunityCards();
+//		cc.processChanceCards();
+		cc.processPropertyCards();
 		//set current player's name
 		HumanPlayer humanPlayer = new HumanPlayer("HumanPlayer");
 		playerList.add(humanPlayer);

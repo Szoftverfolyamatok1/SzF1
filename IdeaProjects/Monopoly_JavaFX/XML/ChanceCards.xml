@@ -1,15 +1,117 @@
 <?xml version="1.0"?>
-<company>
-	<staff id="1001">
-		<firstname>yong</firstname>
-		<lastname>mook kim</lastname>
-		<nickname>mkyong</nickname>
-		<salary>100000</salary>
-	</staff>
-	<staff id="2001">
-		<firstname>low</firstname>
-		<lastname>yin fong</lastname>
-		<nickname>fong fong</nickname>
-		<salary>200000</salary>
-	</staff>
-</company>
+<chance>
+    <element id="1">
+        <name>chance_1</name>
+        <description>Get out of jail free</description>
+        <type>OUT_OF_JAIL</type>
+        <amount>0</amount>
+    </element>
+    <element id="2">
+        <name>chance_2</name>
+        <description>Pay poor tax of $15</description>
+        <type>PAY</type>
+        <amount>15</amount>
+    </element>
+    <element id="3">
+        <name>chance_3</name>
+        <description>Bank pays you divident of $50</description>
+        <type>GET</type>
+        <amount>50</amount>
+    </element>
+    <element id="4">
+        <name>chance_4</name>
+        <description>Advance token to the nearest Railroad and pay owner twice the rental to which he is otherwise entitled</description>
+        <type>ADVANCE_SPECIFIC_TWICE</type>
+        <amount>0</amount>
+    </element>
+    <element id="5">
+        <name>chance_5</name>
+        <description>Advance token to the nearest Railroad and pay owner twice the rental to which he is otherwise entitled</description>
+        <type>ADVANCE_SPECIFIC_TWICE</type>
+        <amount>0</amount>
+    </element>
+    <element id="6">
+        <name>chance_6</name>
+        <description>Advance to St. Charles Place</description>
+        <type>ADVANCE_SPECIFIC</type>
+        <amount>0</amount>
+    </element>
+    <element id="7">
+        <name>chance_7</name>
+        <description>Advance to Illinois Ave</description>
+        <type>ADVANCE_SPECIFIC</type>
+        <amount>0</amount>
+    </element>
+    <element id="8">
+        <name>chance_8</name>
+        <description>Advance to GO, collect $200</description>
+        <type>ADVANCE_SPECIFIC_RICH</type>
+        <amount>200</amount>
+    </element>
+    <element id="9">
+        <name>chance_9</name>
+        <description>Advance token to nearest Utility. If owned, pay owner twice the rental to which he is otherwise entitled</description>
+        <type>ADVANCE_SPECIFIC_TWICE</type>
+        <amount>0</amount>
+    </element>
+    <element id="10">
+        <name>chance_10</name>
+        <description>Take a walk to the Boardwalk</description>
+        <type>ADVANCE_SPECIFIC</type>
+        <amount>0</amount>
+    </element>
+    <element id="11">
+        <name>chance_11</name>
+        <description>Get out of jail free</description>
+        <type>OUT_OF_JAIL</type>
+        <amount>0</amount>
+    </element>
+    <element id="12">
+        <name>chance_12</name>
+        <description>Go back 3 spaces</description>
+        <type>ADVANCE_NEGATIVE</type>
+        <amount>0</amount>
+    </element>
+    <element id="13">
+        <name>chance_13</name>
+        <description>Your building and loan matures, collect $150</description>
+        <type>GET</type>
+        <amount>150</amount>
+    </element>
+    <element id="14">
+        <name>chance_14</name>
+        <description>Go directly to jail</description>
+        <type>ADVANCE_SPECIFIC_POOR</type>
+        <amount>0</amount>
+    </element>
+    <element id="15">
+        <name>chance_15</name>
+        <description>Make general repairs on all your property, $25 per house, $100 per hotel</description>
+        <type>PAY_REPAIR</type>
+        <amount>25;100</amount>
+    </element>
+    <element id="16">
+        <name>chance_16</name>
+        <description>Take a ride on the Reading. If you pass Go, collect $200</description>
+        <type>ADVANCE_SPECIFIC_RICH</type>
+        <amount>0</amount>
+    </element>
+</chance>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

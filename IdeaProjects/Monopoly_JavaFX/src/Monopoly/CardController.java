@@ -18,6 +18,11 @@ public class CardController {
 	private ArrayList<ChanceCard> chanceCards;
 	private XMLParser xmlParser;
 
+	final String communityXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\CommunityChestCards.xml";
+	final String chanceXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\ChanceCards.xml";
+	final String propertyXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\PropertyCards.xml";
+
+	//Constructor
 	public CardController(){
 		xmlParser = new XMLParser();
 		communityChestCards = new ArrayList<CommunityChestCard>();
@@ -25,26 +30,24 @@ public class CardController {
 		chanceCards = new ArrayList<ChanceCard>();
 	}
 
+	//get the Community cards form XML
 	public ArrayList<CommunityChestCard> processCommunityCards(){
-		communityChestCards = xmlParser.handleCardsXML("C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\CommunityChestCards.xml"
-			,"CommunityChest"
-			,communityChestCards.getClass());
-		System.out.println("Size: " + communityChestCards.size());
-		return communityChestCards;
+		return communityChestCards = xmlParser.handleCardsXML(communityXMLPath
+														,"CommunityChest"
+														,communityChestCards.getClass());
 	}
 
+	//get the Chance cards from XML
 	public ArrayList<ChanceCard> processChanceCards(){
-		chanceCards = xmlParser.handleCardsXML("C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\ChanceCards.xml"
-			,"Chance"
-			,chanceCards.getClass());
-		return chanceCards;
+		return chanceCards = xmlParser.handleCardsXML(chanceXMLPath
+												,"Chance"
+												,chanceCards.getClass());
 	}
 
-	//propertycards' XML is not yet filled
+	//get the Property cards from XML
 	public ArrayList<PropertyCard> processPropertyCards(){
-		propertyCards = xmlParser.handleCardsXML("C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\PropertyCards.xml"
-			,"Property"
-			,propertyCards.getClass());
-		return propertyCards;
+		return propertyCards = xmlParser.handleCardsXML(propertyXMLPath
+												  ,"Property"
+												  ,propertyCards.getClass());
 	}
 }

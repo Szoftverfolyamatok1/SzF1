@@ -18,9 +18,9 @@ public class ChanceCard extends Card {
 	-Pay off ( receive money )
 	-Get out of jail
 	 */
-	private Integer amount;
+	private String amount;
 
-	public ChanceCard(Integer id, String name, String description, Type type, Integer nullableAmount){
+	public ChanceCard(Integer id, String name, String description, Type type, String nullableAmount){
 		setId(id);
 		setCardName(name);
 		setDescription(description);
@@ -29,7 +29,7 @@ public class ChanceCard extends Card {
 			this.amount = nullableAmount;
 	}
 
-	public Integer getAmount() {
+	public String getAmount() {
 		return amount;
 	}
 }

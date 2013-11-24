@@ -7,21 +7,21 @@ package Monopoly;
  */
 //Parent class for FieldCard and ChanceCard ( needs workout )
 public abstract class Card {
-	public enum Type {OUT_OF_JAIL
+	public enum Type {	OUT_OF_JAIL
 						,PAY
 						,PAY_REPAIR
 						,GET
 						,GET_ALL
 						,ADVANCE_SPECIFIC
-						,ADVANCE_SPECIFIC_PAY
+						,ADVANCE_SPECIFIC_TWICE
 						,ADVANCE_SPECIFIC_RICH
 						,ADVANCE_SPECIFIC_POOR
-						,ADVANCE_NEGATIVE}
+						,ADVANCE_NEGATIVE }
 
 	private String cardName;
-	private Type type; //dunno yet, lol
+	private Type type;
 	private String description;
-	private int id;
+	private Integer id;
 
 	public String getCardName() {
 		return cardName;

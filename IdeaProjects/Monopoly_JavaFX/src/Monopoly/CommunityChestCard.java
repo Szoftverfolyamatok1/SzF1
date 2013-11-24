@@ -19,9 +19,9 @@ public class CommunityChestCard extends Card {
     	-do not collect GO money
    		-simple advance
 	 */
-	private Integer amount;
+	private String amount;
 
-	public CommunityChestCard(Integer id, String name, String description, Type type, Integer nullableAmount){
+	public CommunityChestCard(Integer id, String name, String description, Type type, String nullableAmount){
 		this.setId(id);
 		this.setCardName(name);
 		this.setDescription(description);
@@ -30,7 +30,7 @@ public class CommunityChestCard extends Card {
 			this.amount = nullableAmount;
 	}
 
-	public Integer getAmount() {
+	public String getAmount() {
 		return amount;
 	}
 }

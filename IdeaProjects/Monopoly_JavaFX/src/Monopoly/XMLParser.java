@@ -17,9 +17,6 @@ import java.util.ArrayList;
 public class XMLParser{
 
 	private ArrayList<BoardElement> boardElements;
-	private ArrayList<ChanceCard> chanceCardElements;
-	private ArrayList<CommunityChestCard> communityChestCardElements;
-	private ArrayList<PropertyCard> propertyCardElements;
 	private ArrayList<Card> cardElements;
 
 	public ArrayList<BoardElement> handleBoardElementXML(String xmlFileName)
@@ -29,38 +26,22 @@ public class XMLParser{
 		return boardElements;
 	}
 
-	//generic function which return an array of a card based type
+	//generic function which returns an array of a card based type
 	//some pervert stuff
 	public <T> T handleCardsXML(String xmlFileName, String typeName, Class<T> type)
 	{
-		communityChestCardElements = new ArrayList<CommunityChestCard>();
-		getCardElements(xmlFileName, typeName);
-		return type.cast(communityChestCardElements);
+		cardElements = new ArrayList<Card>();
+		getCardData(xmlFileName, typeName);
+		return type.cast(cardElements);
 	}
 
-	private void getCardElements(String xmlFileName, String type) {
-	  //Java does not support string switches...
-		if ( type == "CommunityChest" )
-		{
-			getCommunityCardData(xmlFileName, type);
-		}
-		else if ( type == "Chance" )
-		{
-			//getChanceCardData(xmlFileName, type);
-		}
-		else if ( type == "Property" )
-		{
-			//getPropertyData(xmlFileName,type);
-		}
-	}
-
-	private void getCommunityCardData(String xmlFileName, String type)
+	private void getCardData(String xmlFileName, String type)
 	{
 		try {
 			NodeList nList = getNodeListFromFile(xmlFileName);
-			addElementsToList(nList, type);
+			addCardElementsToList(nList, type);
 		} catch (Exception e) {
-			throw new NullPointerException("Cannot initialize document with wrong location!");
+//			throw new NullPointerException("Cannot initialize document with wrong location!");
 		}
 	}
 
@@ -68,21 +49,21 @@ public class XMLParser{
 	{
 		try {
 			NodeList nList = getNodeListFromFile(xmlFileName);
-			addElementsToList(nList, "Board");
+			addBoardElementsToList(nList);
 		} catch (Exception e) {
-			throw new NullPointerException("Cannot initialize document with wrong location!");
+//			throw new NullPointerException("Cannot initialize document with wrong location!");
 		}
 	}
 
-	//Type gives the ROOT element of the XML like "element" or "communitychest" etc
+	//gets the node list from the file ( nList )
 	private NodeList getNodeListFromFile(String xmlFileName) throws ParserConfigurationException, SAXException, IOException {
 		try{
+			//sample XMLParser code, nothing to change
 			File fXmlFile = new File(xmlFileName);
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
 			doc.getDocumentElement().normalize();
-			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 			return doc.getElementsByTagName("element");
 		} catch ( Throwable throwable ) {
 		    System.out.println(throwable.getMessage());
@@ -90,75 +71,113 @@ public class XMLParser{
 		return null;
 	}
 
-	private void addElementsToList(NodeList nList, String type) {
+	//hmm...1
+	private void addBoardElementsToList(NodeList nList)
+	{
 		for (int temp = 0; temp < nList.getLength(); temp++) {
 			Node nNode = nList.item(temp);
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
-				if ( type == "Board")
-				{
 					BoardElement element = createBoardElement(eElement);
 					boardElements.add(element);
-				}
-				else if ( type == "CommunityChest")
-				{
-					CommunityChestCard element = createCommunityChestElement(eElement);
-					communityChestCardElements.add(element);
-				}
-				else if ( type == "Chance")
-				{
-					ChanceCard element = createChanceElement(eElement);
-				}
-				else if ( type == "Property")
-				{
-					PropertyCard element = createPropertyElement(eElement);
-				}
 			}
 		}
 	}
 
+	//hmm...2
+	private void addCardElementsToList(NodeList nList, String type) {
+		for (int temp = 0; temp < nList.getLength(); temp++) {
+			Node nNode = nList.item(temp);
+			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) nNode;
+
+				if ( type == "CommunityChest" ) {
+					cardElements.add(createCommunityChestElement(eElement));
+				}
+				else if ( type == "Chance" ) {
+					cardElements.add(createChanceElement(eElement));
+				}
+				else if ( type == "Property" ) {
+					cardElements.add(createPropertyElement(eElement));
+				}
+				//endif
+			}
+		}
+	}
+
+	//get the node's elements and create a Property card
 	private PropertyCard createPropertyElement(Element eElement) {
-//		return new PropertyCard(
-//			Integer.parseInt(eElement.getElementsByTagName("id").item(0).getTextContent())
-//			,eElement.getElementsByTagName("name").item(0).getTextContent()
-//			,eElement.getElementsByTagName("description").item(0).getTextContent()
-//			,Card.Type.valueOf(eElement.getElementsByTagName("type").item(0).getTextContent())
-//			,Integer.parseInt(eElement.getElementsByTagName("amount").item(0).getTextContent())
-//		);
+		if ( PropertyCard.PropertyType.valueOf(eElement.getElementsByTagName("type").item(0).getTextContent()) == PropertyCard.PropertyType.UTILITY )
+		{
+		   return new UtilityPropertyCard(
+			   Integer.parseInt(eElement.getAttribute("id"))
+			   ,eElement.getElementsByTagName("name").item(0).getTextContent()
+			   ,Integer.parseInt(eElement.getElementsByTagName("rentalValue1").item(0).getTextContent())
+			   ,Integer.parseInt(eElement.getElementsByTagName("rentalValue2").item(0).getTextContent())
+		   );
+		}
+		else if (PropertyCard.PropertyType.valueOf(eElement.getElementsByTagName("type").item(0).getTextContent()) == PropertyCard.PropertyType.RAILING )
+		{
+		   return new RailingPropertyCard(
+			   Integer.parseInt(eElement.getAttribute("id"))
+			   ,eElement.getElementsByTagName("name").item(0).getTextContent()
+			   ,Integer.parseInt(eElement.getElementsByTagName("rentalValue1").item(0).getTextContent())
+			   ,Integer.parseInt(eElement.getElementsByTagName("rentalValue2").item(0).getTextContent())
+			   ,Integer.parseInt(eElement.getElementsByTagName("rentalValue3").item(0).getTextContent())
+			   ,Integer.parseInt(eElement.getElementsByTagName("rentalValue4").item(0).getTextContent())
+			   ,Integer.parseInt(eElement.getElementsByTagName("mortgageValue").item(0).getTextContent())
+		   );
+		}
+		else if ( PropertyCard.PropertyType.valueOf(eElement.getElementsByTagName("type").item(0).getTextContent()) == PropertyCard.PropertyType.SIMPLE )
+		{
+			return new PlotPropertyCard(
+				Integer.parseInt(eElement.getAttribute("id"))
+				,eElement.getElementsByTagName("name").item(0).getTextContent()
+				,PlotPropertyCard.Colour_Type.valueOf(eElement.getElementsByTagName("colour").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("rentalValue0").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("rentalValue1").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("rentalValue2").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("rentalValue3").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("rentalValue4").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("rentalValueHotel").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("mortgageValue").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("houseCost").item(0).getTextContent())
+				,Integer.parseInt(eElement.getElementsByTagName("hotelCost").item(0).getTextContent())
+			);
+		}
 		return null;
 	}
 
+	//get the node's elements and create a Chance card
 	private ChanceCard createChanceElement(Element eElement) {
 		return new ChanceCard(
-			Integer.parseInt(eElement.getElementsByTagName("id").item(0).getTextContent())
+			Integer.parseInt(eElement.getAttribute("id"))
 			,eElement.getElementsByTagName("name").item(0).getTextContent()
 			,eElement.getElementsByTagName("description").item(0).getTextContent()
 			,Card.Type.valueOf(eElement.getElementsByTagName("type").item(0).getTextContent())
-			,Integer.parseInt(eElement.getElementsByTagName("amount").item(0).getTextContent())
+			,eElement.getElementsByTagName("amount").item(0).getTextContent()
 		);
 	}
 
+	//get the node's elements and create a Community card
 	private CommunityChestCard createCommunityChestElement(Element eElement) {
 		return new CommunityChestCard(
-			Integer.parseInt(eElement.getElementsByTagName("id").item(0).getTextContent())
+			Integer.parseInt(eElement.getAttribute("id"))
 			,eElement.getElementsByTagName("name").item(0).getTextContent()
 			,eElement.getElementsByTagName("description").item(0).getTextContent()
 			,Card.Type.valueOf(eElement.getElementsByTagName("type").item(0).getTextContent())
-			,Integer.parseInt(eElement.getElementsByTagName("amount").item(0).getTextContent())
+			,eElement.getElementsByTagName("amount").item(0).getTextContent()
 		);
 	}
 
+	//get the node's elements and create a Board element
 	private BoardElement createBoardElement(Element eElement) {
-		Integer topLeftX = Integer.parseInt(eElement.getElementsByTagName("topLeftX").item(0).getTextContent());
-		Integer topLeftY = Integer.parseInt(eElement.getElementsByTagName("topLeftY").item(0).getTextContent());
-
-		Integer bottomRightX = Integer.parseInt(eElement.getElementsByTagName("bottomRightX").item(0).getTextContent());
-		Integer bottomRightY = Integer.parseInt(eElement.getElementsByTagName("bottomRightY").item(0).getTextContent());
-
 		return new BoardElement(
-			new Point(topLeftX, topLeftY)
-			,new Point(bottomRightX, bottomRightY)
-			,eElement.getAttribute("id")
+			eElement.getAttribute("id")
+			,new Point(Integer.parseInt(eElement.getElementsByTagName("topLeftX").item(0).getTextContent())
+					 ,Integer.parseInt(eElement.getElementsByTagName("topLeftY").item(0).getTextContent()))
+			,new Point(Integer.parseInt(eElement.getElementsByTagName("bottomRightX").item(0).getTextContent())
+					 ,Integer.parseInt(eElement.getElementsByTagName("bottomRightY").item(0).getTextContent()))
 		);
 	}
 }

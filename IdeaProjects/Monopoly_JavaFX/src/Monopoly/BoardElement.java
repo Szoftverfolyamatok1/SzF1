@@ -13,12 +13,14 @@ public class BoardElement {
 
 	private ArrayList<BoardElement> boardCoordinateList;
 
+	final String boardXMLPath = "C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\BoardElements.xml";
+
 	public BoardElement()
 	{
-		boardCoordinateList = new ArrayList<BoardElement>(new XMLParser().handleBoardElementXML("C:\\Users\\Benjamin\\IdeaProjects\\Monopoly_JavaFX\\XML\\BoardElements.xml"));
+		boardCoordinateList = new ArrayList<BoardElement>(new XMLParser().handleBoardElementXML(boardXMLPath));
 	}
 
-	public BoardElement(Point topLeft, Point bottomRight, String elementName)
+	public BoardElement(String elementName, Point topLeft, Point bottomRight)
 	{
 		this.topLeftX = topLeft.getX();
 		this.topLeftY = topLeft.getY();
